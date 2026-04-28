@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+/* ===== BODY ===== */
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(236, 240, 241);
+    color: rgb(44, 62, 80);
+    line-height: 1.5;
+}
+ 
+/* ===== HEADER CON IMAGEN ===== */
+.contenedorHeader {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+}
+ 
+#imagenHeader {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display:flex;
+}
+ 
+/* ===== TEXTOS HEADER ===== */
+.textoHeader {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: rgb(44, 62, 80);
+    color: white;
+    z-index: 2;
+}
+ 
+.textoHeader h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+ 
+.textoHeader p {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0;
+}
+ 
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px 20px;
+}
+ 
+/* ===== SECCIÓN DE GALERÍA ===== */
+.seccionGaleria {
+    width: 100%;
+}
+ 
+.tituloSeccion {
+    font-size: 32px;
+    color: rgb(44, 62, 80);
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 700;
+}
+ 
+.descripcionSeccion {
+    text-align: center;
+    color: rgb(127, 140, 141);
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+ 
+/* ===== GALERÍA ===== */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+ 
+/* ===== TARJETAS ===== */
+.tarjeta {
+    background: rgb(240, 242, 230);
+    width: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Hover para tarjeta */
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+ 
+/* Imagen de la tarjeta */
+.tarjeta-imagen {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+ 
+/* Contenido texto de la tarjeta */
+.tarjeta-contenido {
+    padding: 20px;
+}
+ 
+.tarjeta-titulo {
+    font-size: 20px;
+    color: rgb(44, 62, 80);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+ 
+.tarjeta-descripcion {
+    color: rgb(127, 140, 141);
+    font-size: 15px;
+    line-height: 1.6;
+}
+ 
+/* ===== FOOTER ===== */
+.footer {
+    background-color: rgb(44, 62, 80);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+ 
+.footer p {
+    margin: 0;
+    font-size: 15px;
+}
+ 
+/* ===== TABLET ===== */
+@media (max-width: 768px) {
+    .contenedorHeader {
+        height: 350px;
+    }
+ 
+    .tituloSeccion {
+        font-size: 24px;
+    }
+ 
+    .tarjeta {
+        width: 220px;
+    }
+ 
+    .galeria {
+        gap: 20px;
+    }
+ 
+    .tarjeta-imagen {
+        height: 180px;
+    }
+}
+ 
+/* ===== MÓVIL ===== */
+@media (max-width: 480px) {
+    .contenedorHeader {
+        height: 250px;
+    }
+ 
+    .tituloSeccion {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+ 
+    .descripcionSeccion {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+ 
+    .tarjeta {
+        width: 100%;
+        max-width: 280px;
+    }
+ 
+    .galeria {
+        gap: 15px;
+    }
+ 
+    .tarjeta-imagen {
+        height: 200px;
+    }
+ 
+    .tarjeta-contenido {
+        padding: 15px;
+    }
+ 
+    .tarjeta-titulo {
+        font-size: 18px;
+    }
+ 
+    .tarjeta-descripcion {
+        font-size: 14px;
+    }
+ 
+    .contenedor {
+        padding: 0 15px 30px 15px;
+    }
+}
