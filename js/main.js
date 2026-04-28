@@ -1,4 +1,4 @@
-// ===== IMÁGENES DEL HEADER =====
+// ===== IMÁGENES HEADER =====
 const imagenesHeader = [   
     'assets/images/banner/1.jpg',
     'assets/images/banner/2.jpg',
@@ -10,7 +10,7 @@ const imagenesHeader = [
     'assets/images/banner/8.jpg'
 ];
  
-// ===== IMÁGENES DE LA GALERÍA =====
+// ===== IMÁGENES GALERÍA =====
 const imagenesGaleria = [
     {
         url: 'assets/images/viajes/viajes-1.jpg',
@@ -49,10 +49,11 @@ const imagenesGaleria = [
     }
 ];
  
-// ===== CARGAR HEADER ALEATORIO =====
+// ===== HEADER ALEATORIO =====
 function cargarHeader() {
-    const indice = Math.floor(Math.random() * imagenesHeader.length);
-    const imagen = imagenesHeader[indice];
+    const imagenesAleatorias = [...imagenesHeader];
+    imagenesAleatorias.sort(() => Math.random() - 0.5);
+    const imagen = imagenesAleatorias[0];
     document.getElementById('imagenHeader').src = imagen;
 }
  
