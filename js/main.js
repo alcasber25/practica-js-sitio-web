@@ -15,36 +15,43 @@ const imagenesGaleria = [
     {
         url: 'assets/images/viajes/viajes-1.jpg',
         titulo: 'Playa con palmeras',
+        alt: 'descripcion alternativo 1',
         descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
         url: 'assets/images/viajes/viajes-2.jpg',
         titulo: 'Playa de agua cristalina',
+        alt: 'descripcion alternativo 2',
         descripcion: 'Pellentesque at ante laoreet justo hendrerit venenatis.'
     },
     {
         url: 'assets/images/viajes/viajes-3.jpg',
         titulo: '¿A dónde quieres ir?',
+        alt: 'descripcion alternativo 3',
         descripcion: 'Phasellus feugiat enim ut eros auctor, vitae faucibus eros tristique.'
     },
     {
         url: 'assets/images/viajes/viajes-4.jpg',
         titulo: 'Sevilla',
+        alt:'descripcion alternativo 4',
         descripcion: 'In quis sem nec quam fringilla sollicitudin.'
     },
     {
         url: 'assets/images/viajes/viajes-5.jpg',
         titulo: 'Plaza España',
+        alt:'descripcion alternativo 5',
         descripcion: 'Integer consectetur purus tincidunt dui lobortis, ut laoreet nisi viverra.'
     },
     {
         url: 'assets/images/viajes/viajes-6.jpg',
         titulo: 'Grandes aventuras',
+         alt: 'descripcion alternativo 6',
         descripcion: 'Curabitur imperdiet dolor vestibulum luctus dignissim.'
     },
     {
         url: 'assets/images/viajes/viajes-7.jpg',
         titulo: 'Una ruta inolvidable',
+        alt: 'descripcion alternativo 7',
         descripcion: 'Nulla ultrices ante et fermentum semper.'
     }
 ];
@@ -64,7 +71,7 @@ function cargarGaleria() {
     imagenesGaleria.forEach(function(imagen) {
         const html = `
             <div class="tarjeta">
-                <img src="${imagen.url}" class="tarjeta-imagen">
+                <img src="${imagen.url}" alt="${imagen.alt}" class="tarjeta-imagen">
                 <div class="tarjeta-contenido">
                     <h3 class="tarjeta-titulo">${imagen.titulo}</h3>
                     <p class="tarjeta-descripcion">${imagen.descripcion}</p>
