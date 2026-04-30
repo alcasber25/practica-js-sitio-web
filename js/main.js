@@ -1,15 +1,48 @@
 // ===== IMÁGENES HEADER =====
-const imagenesHeader = [   
-    'assets/images/banner/1.jpg',
-    'assets/images/banner/2.jpg',
-    'assets/images/banner/3.jpg',
-    'assets/images/banner/4.jpg',
-    'assets/images/banner/5.jpg',
-    'assets/images/banner/6.jpg',
-    'assets/images/banner/7.jpg',
-    'assets/images/banner/8.jpg'
+const imagenesHeader = [
+    {
+        url: 'assets/images/banner/1.jpg',
+        alt: 'Descripcion de texto 1'
+    },
+    {
+        url: 'assets/images/banner/2.jpg',
+        alt: 'Descripcion de texto 2'
+    },
+    {
+        url: 'assets/images/banner/3.jpg',
+        alt: 'Descripcion de texto 3'
+    },
+    {
+        url: 'assets/images/banner/4.jpg',
+        alt: 'Descripcion de texto 4'
+    },
+    {
+        url: 'assets/images/banner/5.jpg',
+        alt: 'Descripcion de texto 5'
+    },
+    {
+        url: 'assets/images/banner/6.jpg',
+        alt: 'Descripcion de texto 6'
+    },
+    {
+        url: 'assets/images/banner/7.jpg',
+        alt: 'Descripcion de texto 7'
+    },
+    {
+        url: 'assets/images/banner/8.jpg',
+        alt: 'Descripcion de texto 8'
+    }
 ];
  
+// ===== CARGAR HEADER =====
+const cargarHeader = () => {
+    const indice = Math.floor(Math.random() * imagenesHeader.length);
+    const imagenSeleccionada = imagenesHeader[indice];
+    
+    document.getElementById('imagenHeader').src = imagenSeleccionada.url;
+    document.getElementById('imagenHeader').alt = imagenSeleccionada.alt;
+};
+
 // ===== IMÁGENES GALERÍA =====
 const imagenesGaleria = [
     {
@@ -56,33 +89,42 @@ const imagenesGaleria = [
     }
 ];
  
-// ===== HEADER =====
-function cargarHeader() {
-    const imagenesAleatorias = [...imagenesHeader];
-    imagenesAleatorias.sort(() => Math.random() - 0.5);
-    const imagen = imagenesAleatorias[0];
-    document.getElementById('imagenHeader').src = imagen;
-}
  
-// ===== GALERÍA =====
-function cargarGaleria() {
+// ===== CARGAR GALERÍA =====
+const cargarGaleria = () => {
     const galeria = document.getElementById('galeria');
     galeria.innerHTML = '';
-    imagenesGaleria.forEach(function(imagen) {
-        const html = `
-            <div class="tarjeta">
-                <img src="${imagen.url}" alt="${imagen.alt}" class="tarjeta-imagen">
-                <div class="tarjeta-contenido">
-                    <h3 class="tarjeta-titulo">${imagen.titulo}</h3>
-                    <p class="tarjeta-descripcion">${imagen.descripcion}</p>
-                </div>
-            </div>
-        `;
-        galeria.innerHTML += html;
+    
+    imagenesGaleria.forEach((imagen) => {
+        const tarjeta = document.createElement('div');
+        tarjeta.className = 'tarjeta';
+        
+        const img = document.createElement('img');
+        img.src = imagen.url;
+        img.alt = imagen.alt;
+        img.className = 'tarjeta-imagen';
+        
+        const contenido = document.createElement('div');
+        contenido.className = 'tarjeta-contenido';
+        
+        const titulo = document.createElement('h3');
+        titulo.className = 'tarjeta-titulo';
+        titulo.textContent = imagen.titulo;
+        
+        const descripcion = document.createElement('p');
+        descripcion.className = 'tarjeta-descripcion';
+        descripcion.textContent = imagen.descripcion;
+        
+        contenido.appendChild(titulo);
+        contenido.appendChild(descripcion);
+        
+        tarjeta.appendChild(img);
+        tarjeta.appendChild(contenido);
+        
+        galeria.appendChild(tarjeta);
     });
-}
+};
  
-document.addEventListener('DOMContentLoaded', function() {
-    cargarHeader();
-    cargarGaleria();
-});
+// ===== EJECUTAR =====
+cargarHeader();
+cargarGaleria();
