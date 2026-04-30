@@ -49,7 +49,7 @@ const imagenesGaleria = [
     }
 ];
  
-// ===== HEADER ALEATORIO =====
+// ===== HEADER =====
 function cargarHeader() {
     const imagenesAleatorias = [...imagenesHeader];
     imagenesAleatorias.sort(() => Math.random() - 0.5);
@@ -57,7 +57,7 @@ function cargarHeader() {
     document.getElementById('imagenHeader').src = imagen;
 }
  
-// ===== CARGAR GALERÍA =====
+// ===== GALERÍA =====
 function cargarGaleria() {
     const galeria = document.getElementById('galeria');
     galeria.innerHTML = '';
@@ -75,7 +75,6 @@ function cargarGaleria() {
     });
 }
  
-// ===== EJECUTAR AL CARGAR =====
 document.addEventListener('DOMContentLoaded', function() {
     cargarHeader();
     cargarGaleria();
